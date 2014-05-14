@@ -108,7 +108,7 @@ public class UpdateGalleryFile
 	char	      c;			        // character entered by user
 	String        title;                            // buffer for line of characters
         String        lName;
-	char	      choice;	                        // user's choice
+	int	      choice;	                        // user's choice
         SoldPainting    sold = new SoldPainting();    // investment to be modified
 
 	while (!found && !done)
@@ -151,30 +151,98 @@ public class UpdateGalleryFile
                     System.out.println ("\t Oglesby Art Pricing System\n\n");
                     System.out.println ("\t        1. Update Artist first name\n");
                     System.out.println ("\t        2. Update Artist last name\n");
-                    System.out.println ("\t        3. Update Artist fashionability value\n");
-                    System.out.println ("\t        4. Exit to menu\n\n");
+                    System.out.println ("\t        3. Update Title of Work\n");
+                    System.out.println ("\t        4. Update Date of Work\n");
+                    System.out.println ("\t        5. Update Classification\n");
+                    System.out.println ("\t        6. Update Height\n");
+                    System.out.println ("\t        7. Update Width\n");
+                    System.out.println ("\t        8. Update Medium\n");
+                    System.out.println ("\t        9. Update Subject\n");
+                    System.out.println ("\t        10. Update Date of Purchase\n");
+                    System.out.println ("\t        11. Update Name of Seller\n");
+                    System.out.println ("\t        12. Update Address of Seller\n");
+                    System.out.println ("\t        13. Update Actual Purchase Price\n");
+                    System.out.println ("\t        14. Update Date of Sale\n");
+                    System.out.println ("\t        15. Update Name of Buyer\n");
+                    System.out.println ("\t        16. Update Address of Buyer\n");
+                    System.out.println ("\t        17. Update Actual Selling Price\n");
+                    System.out.println ("\t        18. Exit to menu\n\n");
                     System.out.println ("Enter your choice and press <ENTER>: ");
-
                     try
                     {
-			choice = UserInterface.getChar();
+			choice = UserInterface.getInt();
 
 			switch (choice)
 			{
-                            case '1':
+                            case 1:
                                 sold.updateArtistsFirstName();
                                 break;
 
-                            case '2':
+                            case 2:
                                 sold.updateArtistsLastName();
                                 break;
                             
-                            case '3':
-                              //sold.updateFashionabilityValue();
+                            case 3:
+                              sold.updateTitleOfWork();
+                              break;
+                                
+                            case 4:
+                              sold.updateDateOfWork();
+                              break;
+                                
+                            case 5:
+                              sold.updateClassification();
+                              break;
+                            
+                            case 6:
+                              sold.updateHeight();
+                              break;
+                                
+                            case 7:
+                              sold.updateWidth();
+                              break;
+                                
+                            case 8:
+                              sold.updateMedium();
+                              break;
+                                
+                            case 9:
+                              sold.updateSubject();
+                              break;
+                                
+                            case 10:
+                              sold.updateDateOfPurchase();
+                              break;
+                                
+                            case 11:
+                              sold.updateNameOfSeller();
+                              break;
+                                
+                            case 12:
+                              sold.updateAddressOfSeller();
+                              break;
+                                
+                            case 13:
+                              sold.updateActualPurchasePrice();
+                              break;
+                                
+                            case 14:
+                              sold.updateDateOfSale();
+                              break;
+                                
+                            case 15:
+                              sold.updateNameOfBuyer();
+                              break;
+                                
+                            case 16:
+                              sold.updateAddressOfBuyer();
+                              break;
+                                
+                            case 17:
+                              sold.updateActualSellingPrice();
                               break;
 
-                            case '4':
-                            case '\n':
+                            case 18:
                               done = true;
 				  break;
 
@@ -222,8 +290,8 @@ public class UpdateGalleryFile
 	char	      c;			        // character entered by user
 	String        title;                            // buffer for line of characters
         String        lName;
-	char	      choice;	                        // user's choice
-        BoughtPainting    b = new BoughtPainting();    // investment to be modified
+	int	      choice;	                        // user's choice
+        BoughtPainting    b = new BoughtPainting();    // painting to be modified
 
 	while (!found && !done)
 	{
@@ -261,34 +329,82 @@ public class UpdateGalleryFile
 		{
                     UserInterface.clearScreen ();
 
-                    System.out.println ("\t           UPDATE BOUGHT PAINTING\n\n"); //this needs to change based on what updates we allow
+                    System.out.println ("\t           UPDATE SOLD PAINTING\n\n"); //this needs to change based on what updates we allow
                     System.out.println ("\t Oglesby Art Pricing System\n\n");
                     System.out.println ("\t        1. Update Artist first name\n");
                     System.out.println ("\t        2. Update Artist last name\n");
-                    System.out.println ("\t        3. Update Artist fashionability value\n");
-                    System.out.println ("\t        4. Exit to menu\n\n");
+                    System.out.println ("\t        3. Update Title of Work\n");
+                    System.out.println ("\t        4. Update Date of Work\n");
+                    System.out.println ("\t        5. Update Classification\n");
+                    System.out.println ("\t        6. Update Height\n");
+                    System.out.println ("\t        7. Update Width\n");
+                    System.out.println ("\t        8. Update Medium\n");
+                    System.out.println ("\t        9. Update Subject\n");
+                    System.out.println ("\t        10. Update Date of Purchase\n");
+                    System.out.println ("\t        11. Update Name of Seller\n");
+                    System.out.println ("\t        12. Update Address of Seller\n");
+                    System.out.println ("\t        13. Update Actual Purchase Price\n");
+                    System.out.println ("\t        14. Exit to menu\n\n");
                     System.out.println ("Enter your choice and press <ENTER>: ");
-
                     try
                     {
-			choice = UserInterface.getChar();
+			choice = UserInterface.getInt();
 
 			switch (choice)
 			{
-                            case '1':
+                            case 1:
                                 b.updateArtistsFirstName();
                                 break;
 
-                            case '2':
+                            case 2:
                                 b.updateArtistsLastName();
                                 break;
                             
-                            case '3':
-                              //b.updateFashionabilityValue();
+                            case 3:
+                              b.updateTitleOfWork();
+                              break;
+                                
+                            case 4:
+                              b.updateDateOfWork();
+                              break;
+                                
+                            case 5:
+                              b.updateClassification();
+                              break;
+                            
+                            case 6:
+                              b.updateHeight();
+                              break;
+                                
+                            case 7:
+                              b.updateWidth();
+                              break;
+                                
+                            case 8:
+                              b.updateMedium();
+                              break;
+                                
+                            case 9:
+                              b.updateSubject();
+                              break;
+                                
+                            case 10:
+                              b.updateDateOfPurchase();
+                              break;
+                                
+                            case 11:
+                              b.updateNameOfSeller();
+                              break;
+                                
+                            case 12:
+                              b.updateAddressOfSeller();
+                              break;
+                                
+                            case 13:
+                              b.updateActualPurchasePrice();
                               break;
 
-                            case '4':
-                            case '\n':
+                            case 14:
                               done = true;
 				  break;
 
