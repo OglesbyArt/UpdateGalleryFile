@@ -22,14 +22,14 @@ public class UpdateGalleryFile
 
             while (!found && !done)
             {
-                System.out.println ("Please enter the following for the sold painting you want to update: "
+                System.out.println ("Please enter the following for the sold painting you want to sell: \n"
                     + "\t   Last name of Artist then press <ENTER> and Painting Title then press <ENTER>"); 
 
             lName = UserInterface.getString();
             title = UserInterface.getString();
 
 	    found = sold.find (lName, title);
-
+            
 	    if (!found)
 	    {
 		System.out.println ("Painting by " + lName +" Titled "+ title + " was not found.");
@@ -42,43 +42,50 @@ public class UpdateGalleryFile
 		  done = true;
 		}
             }
+            System.out.println("The Actual Purchase Price is: " +sold.getActualPurchasePrice());
+            System.out.println("The Target Selling Price is: " +sold.getTargetSellingPrice());
 	}
 
 	if (!found)
 	{
 	    return;
 	}
+        System.out.println("\n\nDo you want to buy this painting? y/n");
+        char response = UserInterface.getChar();
+        if(response == 'y')
+        {                
+            
 
-	//while (!done)
-	//{
-		while (!done)
-		{
-                    UserInterface.clearScreen ();
+            while (!done)
+            {
+                    while (!done)
+                    {
+                        System.out.println ("\t           ADD SOLD PAINTING\n\n");
+                        System.out.println ("\t Oglesby Art Pricing System\n\n");
+                        System.out.println ("\t        Please enter the Date of sale: ");
+                        String temp = UserInterface.getString();
+                        Date date = new Date(temp);
+                        sold.setDateOfSale(date);
+                        System.out.println ("\t        Please enter the Name of the Buyer (No longer than 30 characters): ");
+                        String name = UserInterface.getString();
+                        sold.setNameOfBuyer(name);
+                        System.out.println ("\t        Please enter the Address of buyer (No longer than 40 characters): ");
+                        String address = UserInterface.getString();
+                        sold.setAddressOfBuyer(address);
+                        done=true;
 
-                    System.out.println ("\t           ADD SOLD PAINTING\n\n");
-                    System.out.println ("\t Oglesby Art Pricing System\n\n");
-                    System.out.println ("\t        Please enter the Date of sale: ");
-                    String temp = UserInterface.getString();
-                    Date date = new Date(temp);
-                    sold.setDateOfSale(date);
-                    System.out.println ("\t        Please enter the Name of the Buyer (No longer than 30 characters): ");
-                    String name = UserInterface.getString();
-                    sold.setNameOfBuyer(name);
-                    System.out.println ("\t        Please enter the Address of buyer (No longer than 40 characters): ");
-                    String address = UserInterface.getString();
-                    sold.setAddressOfBuyer(address);
-                    done=true;
+                    }
 
-                }
+                    if (!done)
+                    {
+                        sold.print ();
+                        UserInterface.pressEnter();
+                    }
 
-		if (!done)
-		{
-	            sold.print ();
-	            UserInterface.pressEnter();
-		}
-        //}
 
-	sold.save ();
+                sold.save ();
+            }
+        }
     }
     catch (Exception e)
     {
