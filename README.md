@@ -1,15 +1,14 @@
+
 import java.util.Date;
 import java.util.Scanner;
 
 public class UpdateGalleryFile 
 {
-    
     //Desc: Adds a painting to the sold painting file
     //Pre: SoldPainting.txt must exsist
     //Post: The changes are made to the painting in the text file
     public static void addSoldPaintingFile() 
     {
-
         try
         {
             boolean	      done = false;		        // terminates while-loop
@@ -50,7 +49,7 @@ public class UpdateGalleryFile
 	{
 	    return;
 	}
-        System.out.println("\n\nDo you want to sell this painting? y/n");
+        System.out.println("\n\nDo you want to sellPi this painting? y/n");
         char response = UserInterface.getChar();
         if(response == 'y')
         {                
@@ -72,6 +71,9 @@ public class UpdateGalleryFile
                         System.out.println ("\t        Please enter the Address of buyer (No longer than 40 characters): ");
                         String address = UserInterface.getString();
                         sold.setAddressOfBuyer(address);
+                        System.out.println ("\t        Please enter the actual purchase price): ");
+                        double aprice = UserInterface.getDouble();
+                        sold.setActualPurchasePrice(aprice);
                         done=true;
 
                     }
