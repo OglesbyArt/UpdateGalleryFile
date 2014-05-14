@@ -50,7 +50,7 @@ public class UpdateGalleryFile
 	{
 	    return;
 	}
-        System.out.println("\n\nDo you want to buy this painting? y/n");
+        System.out.println("\n\nDo you want to sell this painting? y/n");
         char response = UserInterface.getChar();
         if(response == 'y')
         {                
