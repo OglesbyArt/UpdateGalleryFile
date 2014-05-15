@@ -127,7 +127,7 @@ public class UpdateGalleryFile
 	    if (!found)
 	    {
 		System.out.println ("Painting by " + lName +" Titled "+ title + " was not found.");
-		System.out.println ("Would you like to enter another Artist Name and Title?");
+		System.out.println ("Would you like to enter another Artist Name and Title? Enter y/n");
 
 		choice = UserInterface.getChar();
 
