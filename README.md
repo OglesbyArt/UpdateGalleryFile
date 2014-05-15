@@ -1,3 +1,4 @@
+
 import java.util.Date;
 import java.util.Scanner;
 
@@ -311,8 +312,8 @@ public class UpdateGalleryFile
 
 	while (!found && !done)
 	{
-            System.out.println ("Please enter the following for the Bought painting you want to update "
-                    + "\t   Last name of Artist then press <ENTER> "
+            System.out.println ("Please enter the following for the Bought painting you want to update \n"
+                    + "Last name of Artist then press <ENTER> "
                     + "and Painting Title then press <ENTER>"); 
 
             lName = UserInterface.getString();
@@ -343,7 +344,6 @@ public class UpdateGalleryFile
 	{
 		while (!done)
 		{
-                    UserInterface.clearScreen ();
 
                     System.out.println ("\t           UPDATE SOLD PAINTING\n\n"); //this needs to change based on what updates we allow
                     System.out.println ("\t Oglesby Art Pricing System\n\n");
