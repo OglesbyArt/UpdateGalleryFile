@@ -1,4 +1,3 @@
-
 import java.util.Date;
 import java.util.Scanner;
 
@@ -115,8 +114,8 @@ public class UpdateGalleryFile
 
 	while (!found && !done)
 	{
-            System.out.println ("Please enter the following for the sold painting you want to update "
-                    + "\t   Last name of Artist then press <ENTER> "
+            System.out.println ("Please enter the following for the sold painting you want to update \n"
+                    + "Last name of Artist then press <ENTER> "
                     + "and Painting Title then press <ENTER>"); 
 
             lName = UserInterface.getString();
@@ -147,8 +146,6 @@ public class UpdateGalleryFile
 	{
 		while (!done)
 		{
-                    UserInterface.clearScreen ();
-
                     System.out.println ("\t           UPDATE SOLD PAINTING\n\n"); //this needs to change based on what updates we allow
                     System.out.println ("\t Oglesby Art Pricing System\n\n");
                     System.out.println ("\t        1. Update Artist first name\n");
@@ -178,70 +175,87 @@ public class UpdateGalleryFile
 			{
                             case 1:
                                 sold.updateArtistsFirstName();
+                                sold.save();
                                 break;
 
                             case 2:
                                 sold.updateArtistsLastName();
+                                sold.save();
                                 break;
                             
                             case 3:
                               sold.updateTitleOfWork();
+                              sold.save();
                               break;
                                 
                             case 4:
                               sold.updateDateOfWork();
+                              sold.save();
                               break;
                                 
                             case 5:
                               sold.updateClassification();
+                              sold.save();
                               break;
                             
                             case 6:
                               sold.updateHeight();
+                              sold.save();
                               break;
                                 
                             case 7:
                               sold.updateWidth();
+                              sold.save();
                               break;
                                 
                             case 8:
                               sold.updateMedium();
+                              sold.save();
                               break;
                                 
                             case 9:
                               sold.updateSubject();
+                              sold.save();
                               break;
                                 
                             case 10:
                               sold.updateDateOfPurchase();
+                              sold.save();
                               break;
                                 
                             case 11:
                               sold.updateNameOfSeller();
+                              sold.save();
                               break;
                                 
                             case 12:
                               sold.updateAddressOfSeller();
+                              sold.save();
                               break;
                                 
                             case 13:
                               sold.updateActualPurchasePrice();
+                              sold.save();
                               break;
                                 
                             case 14:
                               sold.updateDateOfSale();
+                              sold.save();
                               break;
                                 
                             case 15:
                               sold.updateNameOfBuyer();
+                              sold.save();
                               break;
                                 
                             case 16:
                               sold.updateAddressOfBuyer();
+                              sold.save();
                               break;
                                 
                             case 17:
                               sold.updateActualSellingPrice();
+                              sold.save();
                               break;
 
                             case 18:
@@ -263,12 +277,12 @@ public class UpdateGalleryFile
 			if (!done)
 			{
 		            sold.print ();
+                            System.out.println("Press <ENTER> to return to main menu");
 		            UserInterface.pressEnter();
+                            done = true;
 			}
                 }
         }
-
-	sold.save ();
     }
     catch (Exception e)
     {
@@ -309,7 +323,7 @@ public class UpdateGalleryFile
 	    if (!found)
 	    {
 		System.out.println ("Painting by " + lName +" Titled "+ title + " was not found.");
-		System.out.println ("Would you like to enter another Artist Name and Title?");
+		System.out.println ("Would you like to enter another Artist Name and Title? y/n");
 
 		choice = UserInterface.getChar();
 
@@ -348,94 +362,102 @@ public class UpdateGalleryFile
                     System.out.println ("\t        13. Update Actual Purchase Price\n");
                     System.out.println ("\t        14. Exit to menu\n\n");
                     System.out.println ("Enter your choice and press <ENTER>: ");
-                    try
+                    choice = UserInterface.getInt();
+
+                    switch (choice)
                     {
-			choice = UserInterface.getInt();
+                        case 1:
+                            b.updateArtistsFirstName();
+                            b.save ();
+                            break;
 
-			switch (choice)
-			{
-                            case 1:
-                                b.updateArtistsFirstName();
-                                break;
+                        case 2:
+                            b.updateArtistsLastName();
+                            b.save ();
+                            break;
 
-                            case 2:
-                                b.updateArtistsLastName();
-                                break;
-                            
-                            case 3:
-                              b.updateTitleOfWork();
-                              break;
-                                
-                            case 4:
-                              b.updateDateOfWork();
-                              break;
-                                
-                            case 5:
-                              b.updateClassification();
-                              break;
-                            
-                            case 6:
-                              b.updateHeight();
-                              break;
-                                
-                            case 7:
-                              b.updateWidth();
-                              break;
-                                
-                            case 8:
-                              b.updateMedium();
-                              break;
-                                
-                            case 9:
-                              b.updateSubject();
-                              break;
-                                
-                            case 10:
-                              b.updateDateOfPurchase();
-                              break;
-                                
-                            case 11:
-                              b.updateNameOfSeller();
-                              break;
-                                
-                            case 12:
-                              b.updateAddressOfSeller();
-                              break;
-                                
-                            case 13:
-                              b.updateActualPurchasePrice();
+                        case 3:
+                          b.updateTitleOfWork();
+                          b.save ();
+                          break;
+
+                        case 4:
+                          b.updateDateOfWork();
+                          b.save ();
+                          break;
+
+                        case 5:
+                          b.updateClassification();
+                          b.save ();
+                          break;
+
+                        case 6:
+                          b.updateHeight();
+                          b.save ();
+                          break;
+
+                        case 7:
+                          b.updateWidth();
+                          b.save ();
+                          break;
+
+                        case 8:
+                          b.updateMedium();
+                          b.save ();
+                          break;
+
+                        case 9:
+                          b.updateSubject();
+                          b.save ();
+                          break;
+
+                        case 10:
+                          b.updateDateOfPurchase();
+                          b.save ();
+                          break;
+
+                        case 11:
+                          b.updateNameOfSeller();
+                          b.save ();
+                          break;
+
+                        case 12:
+                          b.updateAddressOfSeller();
+                          b.save ();
+                          break;
+
+                        case 13:
+                          b.updateActualPurchasePrice();
+                          b.save ();
+                          break;
+
+                        case 14:
+                          done = true;
                               break;
 
-                            case 14:
-                              done = true;
-				  break;
-
-                            default:
-                              System.out.println ("\n\nNot a valid choice\n");
-                              UserInterface.pressEnter();
-                              break;
+                        default:
+                          System.out.println ("\n\nNot a valid choice\n");
+                          UserInterface.pressEnter();
+                          break;
 			}
                      }
-			catch (Exception e)
-			{
-			    System.out.println ("***** Error: UpdateGalleryFile.updateBoughtPainting() *****");
-			    System.out.println ("\t" + e);
-			}
 
 			if (!done)
 			{
 		            b.print ();
+                            System.out.println("Press <ENTER> to return to main menu");
 		            UserInterface.pressEnter();
+                            done = true;
 			}
+                        
                 }
         }
-
-	b.save ();
-    }
+    
     catch (Exception e)
     {
 	    System.out.println ("***** Error: UpdateGalleryFile.updateBoughtPainting() () *****");
 	    System.out.println ("\t" + e);
     }
+    
   }
 }
