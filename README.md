@@ -71,7 +71,7 @@ public class UpdateGalleryFile
                         System.out.println ("\t        Please enter the Address of buyer (No longer than 40 characters): ");
                         String address = UserInterface.getString();
                         sold.setAddressOfBuyer(address);
-                        System.out.println ("\t        Please enter the actual purchase price): ");
+                        System.out.println ("\t        Please enter the actual purchase price: ");
                         double aprice = UserInterface.getDouble();
                         sold.setActualPurchasePrice(aprice);
                         done=true;
